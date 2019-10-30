@@ -29,11 +29,7 @@ func (a *auth) generateUUID() error {
 	if a.UUID != "" {
 		return nil
 	}
-	uuid, err := uuid.NewV4()
-	if err != nil {
-		return err
-	}
-	a.UUID = uuid.String()
+	a.UUID = uuid.NewV4().String()
 	return nil
 }
 
